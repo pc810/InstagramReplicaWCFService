@@ -13,5 +13,7 @@ namespace InstagramReplicaService
         public string photopath { get; set; }
         public string location { get; set; }
         public DateTime creation_date { get; set; }
+        public string post_text { get; set; }
+        public int? likes { get; set; }
     }
 }
