@@ -9,7 +9,7 @@ namespace InstagramReplicaService
     public class UserFollow
     {
         // userId1 is followed by userId2
-        public int userId1 { get; set; } 
+        public int userId1 { get; set; }
         public int userId2 { get; set; }
     }
 }

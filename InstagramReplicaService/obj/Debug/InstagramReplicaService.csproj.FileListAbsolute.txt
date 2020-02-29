@@ -4,3 +4,6 @@ C:\Users\HP WORLD\Desktop\github\InstagramReplicaService\InstagramReplicaService
 C:\Users\HP WORLD\Desktop\github\InstagramReplicaService\InstagramReplicaService\obj\Debug\InstagramReplicaService.csprojResolveAssemblyReference.cache
 C:\Users\HP WORLD\Desktop\github\InstagramReplicaService\InstagramReplicaService\obj\Debug\InstagramReplicaService.dll
 C:\Users\HP WORLD\Desktop\github\InstagramReplicaService\InstagramReplicaService\obj\Debug\InstagramReplicaService.pdb
+C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramReplicaService\obj\Debug\InstagramReplicaService.csprojResolveAssemblyReference.cache
+C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramReplicaService\obj\Debug\InstagramReplicaService.dll
+C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramReplicaService\obj\Debug\InstagramReplicaService.pdb
