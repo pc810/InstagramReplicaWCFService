@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -10,8 +11,128 @@ namespace InstagramReplicaService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "UserService" in both code and config file together.
     public class UserService : IUserService
     {
-        public void DoWork()
+        string cs = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=InstaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public void CreateUser(User user)
         {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "insert into user(username,email,dob,creation_date,password) values(@name,@email,@dob,@creation_date,@password)";
+                command.Parameters.Add(new SqlParameter("@name", user.username));
+                command.Parameters.Add(new SqlParameter("@email", user.email));
+                command.Parameters.Add(new SqlParameter("@dob", user.dob));
+                command.Parameters.Add(new SqlParameter("@creation_date", user.creation_date));
+                command.Parameters.Add(new SqlParameter("@password", user.password));
+
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+            return;
+        }
+
+        public void DeleteUser(User user)
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "delete from user where userId=@Id";
+                command.Parameters.Add(new SqlParameter("@Id", user.userId));
+            
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+            return;
+        }
+
+        public User getUser(int userId)
+        {
+            User user = new User();
+
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "select * from user where userId = @id";
+                command.Parameters.Add(new SqlParameter("@id", userId));
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    user.userId = Convert.ToInt32(reader["userId"]);
+                    user.username = reader["username"].ToString();
+                    user.email = reader["email"].ToString();
+                    user.dob = Convert.ToDateTime(reader["dob"]);
+                    user.creation_date = Convert.ToDateTime(reader["creation_date"]);
+                    user.password = reader["password"].ToString();
+                }
+            }
+            return user;
+        }
+
+        public User getUserByEmail(string email)
+        {
+            User user = new User();
+
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "select * from user where email = @email";
+                command.Parameters.Add(new SqlParameter("@email", email));
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    user.userId = Convert.ToInt32(reader["userId"]);
+                    user.username = reader["username"].ToString();
+                    user.email = reader["email"].ToString();
+                    user.dob = Convert.ToDateTime(reader["dob"]);
+                    user.creation_date = Convert.ToDateTime(reader["creation_date"]);
+                    user.password = reader["password"].ToString();
+                }
+            }
+            return user;
+        }
+
+        public int getUserId(string email)
+        {
+            int userId=0;
+
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "select userId from user where email = @email";
+                command.Parameters.Add(new SqlParameter("@email", email));
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    userId = Convert.ToInt32(reader["userId"]);   
+                }
+            }
+            return userId;
+        }
+
+        public void UpdateUser(User user)
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "update user set username=@name , email=@email , dob=@dob , creation_date=@creation_date , password=@password";
+                command.Parameters.Add(new SqlParameter("@name", user.username));
+                command.Parameters.Add(new SqlParameter("@email", user.email));
+                command.Parameters.Add(new SqlParameter("@dob", user.dob));
+                command.Parameters.Add(new SqlParameter("@creation_date", user.creation_date));
+                command.Parameters.Add(new SqlParameter("@password", user.password));
+
+                con.Open();
+                command.ExecuteNonQuery();
+            }
+            return;
         }
     }
 }
