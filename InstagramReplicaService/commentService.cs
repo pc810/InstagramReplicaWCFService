@@ -24,7 +24,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO comment (userId,postId,comment,creation_time) VALUES(@userId,@postId,@comment,@creation_time)";
+                cmd.CommandText = "INSERT INTO comment (userId,postId,comment,creation_date) VALUES(@userId,@postId,@comment,@creation_date)";
 
                 SqlParameter parauserid = new SqlParameter {ParameterName = "@userId", Value = comment.userId};
                 cmd.Parameters.Add(parauserid);
@@ -37,7 +37,7 @@ namespace InstagramReplicaService
 
                 SqlParameter paracreationtime = new SqlParameter
                 {
-                    ParameterName = "@creation_time", Value = comment.creation_time
+                    ParameterName = "@creation_date", Value = comment.creation_date
                 };
                 cmd.Parameters.Add(paracreationtime);
 
@@ -53,7 +53,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete from comment where Id = @Id";
+                cmd.CommandText = "Delete from comment where commentId = @Id";
                 SqlParameter paramId = new SqlParameter {ParameterName = "@Id", Value = commentId};
                 cmd.Parameters.Add(paramId);
                 con.Open();
@@ -92,7 +92,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "Select * from comment where Id = @Id";
+                cmd.CommandText = "Select * from comment where postId = @Id";
                 SqlParameter paraid = new SqlParameter {ParameterName = "@Id", Value = postId};
                 cmd.Parameters.Add(paraid);
 
@@ -107,7 +107,7 @@ namespace InstagramReplicaService
                     c.postId = Convert.ToInt32(reader["postId"]);
 
                     c.comment = reader["comment"].ToString();
-                    c.creation_time = Convert.ToDateTime(reader["creation_time"]);
+                    c.creation_date = Convert.ToDateTime(reader["creation_date"]);
                     comments.Add(c);
                 }
             }

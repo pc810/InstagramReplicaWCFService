@@ -24,7 +24,7 @@ namespace InstagramReplicaService
         int getUserId(string email);
 
         [OperationContract]
-        void DeleteUser(User user);
+        void DeleteUser(int userId);
 
         [OperationContract]
         void UpdateUser(User user);

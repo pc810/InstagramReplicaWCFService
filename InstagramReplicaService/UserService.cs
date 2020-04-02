@@ -11,14 +11,15 @@ namespace InstagramReplicaService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "UserService" in both code and config file together.
     public class UserService : IUserService
     {
-        string cs = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=InstaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public void CreateUser(User user)
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "insert into user(username,email,dob,creation_date,password) values(@name,@email,@dob,@creation_date,@password)";
+                //INSERT INTO comment (userId,postId,comment,creation_date) VALUES(@userId,@postId,@comment,@creation_date
+                command.CommandText = "INSERT INTO [dbo].[user] (username,email,dob,creation_date,password) VALUES(@name,@email,@dob,@creation_date,@password)";
                 command.Parameters.Add(new SqlParameter("@name", user.username));
                 command.Parameters.Add(new SqlParameter("@email", user.email));
                 command.Parameters.Add(new SqlParameter("@dob", user.dob));
@@ -28,22 +29,20 @@ namespace InstagramReplicaService
                 con.Open();
                 command.ExecuteNonQuery();
             }
-            return;
         }
 
-        public void DeleteUser(User user)
+        public void DeleteUser(int userId)
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "delete from user where userId=@Id";
-                command.Parameters.Add(new SqlParameter("@Id", user.userId));
+                command.CommandText = "delete from [dbo].[user] where userId=@Id";
+                command.Parameters.Add(new SqlParameter("@Id", userId));
             
                 con.Open();
                 command.ExecuteNonQuery();
             }
-            return;
         }
 
         public User getUser(int userId)
@@ -54,7 +53,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "select * from user where userId = @id";
+                command.CommandText = "select * from [dbo].[user] where userId = @id";
                 command.Parameters.Add(new SqlParameter("@id", userId));
                 con.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -79,7 +78,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "select * from user where email = @email";
+                command.CommandText = "select * from [dbo].[user] where email = @email";
                 command.Parameters.Add(new SqlParameter("@email", email));
                 con.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -104,7 +103,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "select userId from user where email = @email";
+                command.CommandText = "select userId from [dbo].[user] where email = @email";
                 command.Parameters.Add(new SqlParameter("@email", email));
                 con.Open();
                 SqlDataReader reader = command.ExecuteReader();
@@ -122,7 +121,7 @@ namespace InstagramReplicaService
             {
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = "update user set username=@name , email=@email , dob=@dob , creation_date=@creation_date , password=@password";
+                command.CommandText = "update [dbo].[user] set username=@name , email=@email , dob=@dob , creation_date=@creation_date , password=@password";
                 command.Parameters.Add(new SqlParameter("@name", user.username));
                 command.Parameters.Add(new SqlParameter("@email", user.email));
                 command.Parameters.Add(new SqlParameter("@dob", user.dob));
@@ -132,7 +131,7 @@ namespace InstagramReplicaService
                 con.Open();
                 command.ExecuteNonQuery();
             }
-            return;
+            
         }
     }
 }
