@@ -9,6 +9,7 @@ namespace InstagramServiceHost
 {
     class Program
     {
+        //use cmd as adminstartor ---  netsh http add urlacl url=http://+:8733/Instagram user=Everyone
         static void Main(string[] args)
         {
             using (ServiceHost host = new ServiceHost(typeof(InstagramReplicaService.UserService)))
