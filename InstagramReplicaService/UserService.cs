@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -11,7 +12,8 @@ namespace InstagramReplicaService
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "UserService" in both code and config file together.
     public class UserService : IUserService
     {
-        public string cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //public string cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
         public void CreateUser(User user)
         {
             using (SqlConnection con = new SqlConnection(cs))

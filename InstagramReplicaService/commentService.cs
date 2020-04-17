@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,10 +16,11 @@ namespace InstagramReplicaService
         private readonly string cs;
         public commentService()
         {
-            cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 
-        }
-        public void createComment(Comment comment)
+    }
+    public void createComment(Comment comment)
         { 
             using (SqlConnection con = new SqlConnection(cs))
             {
