@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="70403339-5731-49e9-be7c-cf5c41b28e53" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserService.wsdl" MetadataType="Wsdl" ID="7b6af6b8-553a-4df8-82ef-cb0f235cf9d0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="9d562ac8-12dd-4317-b2ec-3df1a40ca203" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="ca30ac0f-110d-495c-a67b-01cd6507dea9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="6abfe9fd-3ba5-46f1-a5e0-df220e73b798" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="a168c5eb-6735-4e05-adbf-b35cd6153641" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/UserService/?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

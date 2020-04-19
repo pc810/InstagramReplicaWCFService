@@ -16,5 +16,8 @@ namespace InstagramReplicaService
 
         [OperationContract]
         void unfollowUser(int userId1, int userId2);
+
+        [OperationContract]
+        List<int> getFollowerList(int userId);
     }
 }

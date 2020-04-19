@@ -29,6 +29,8 @@ namespace InstagramReplicaService
         [OperationContract]
         void UpdateUser(User user);
 
+        [OperationContract]
+        List<User> getUserWith(string username);
 
     }
 }

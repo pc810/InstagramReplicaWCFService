@@ -13,7 +13,7 @@ namespace InstagramReplicaService
     public class UserService : IUserService
     {
         //public string cs = @"Data Source=(LOCALDB)\MSSqlLocalDb;Initial Catalog=instagramDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        public string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+        public string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;        
         public void CreateUser(User user)
         {
             using (SqlConnection con = new SqlConnection(cs))
@@ -134,6 +134,31 @@ namespace InstagramReplicaService
                 command.ExecuteNonQuery();
             }
             
+        }
+        public List<User> getUserWith(string username)
+        {
+            List<User> userlist = new List<User>();
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "select * from [dbo].[user] where username LIKE @username";
+                command.Parameters.Add(new SqlParameter("@username", "%" + username + "%"));
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    User user = new User();
+                    user.userId = Convert.ToInt32(reader["userId"]);
+                    user.username = reader["username"].ToString();
+                    user.email = reader["email"].ToString();
+                    user.dob = Convert.ToDateTime(reader["dob"]);
+                    user.creation_date = Convert.ToDateTime(reader["creation_date"]);
+                    user.password = reader["password"].ToString();
+                    userlist.Add(user);
+                }
+            }
+            return userlist;
         }
     }
 }

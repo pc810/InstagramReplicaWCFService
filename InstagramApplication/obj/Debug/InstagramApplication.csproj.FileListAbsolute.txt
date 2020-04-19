@@ -1,0 +1,17 @@
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.csprojAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.Properties.Resources.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.csproj.GenerateResource.cache
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\bin\Debug\InstagramApplication.exe.config
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\bin\Debug\InstagramApplication.exe
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\bin\Debug\InstagramApplication.pdb
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.exe
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.pdb
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.CommentComponent.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.Comments.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.CreatePost.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.FollowingComponent.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.FollowUsersComponent.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.Home.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.Login.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.PostComponent.resources
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramApplication\obj\Debug\InstagramApplication.Register.resources

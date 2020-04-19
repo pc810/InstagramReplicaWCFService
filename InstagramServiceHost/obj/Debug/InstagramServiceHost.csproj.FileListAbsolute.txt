@@ -1,8 +1,10 @@
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.exe.config
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.exe
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.pdb
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramReplicaService.dll
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramReplicaService.pdb
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.csprojResolveAssemblyReference.cache
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.exe
-C:\Users\HP WORLD\Desktop\github\wcfProject\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.pdb
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.exe.config
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.exe
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramServiceHost.pdb
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramReplicaService.dll
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramReplicaService.pdb
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\bin\Debug\InstagramReplicaService.dll.config
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.csprojAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.csproj.CopyComplete
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.exe
+C:\Users\PC\Documents\GitHub\InstagramReplicaWCFService\InstagramServiceHost\obj\Debug\InstagramServiceHost.pdb

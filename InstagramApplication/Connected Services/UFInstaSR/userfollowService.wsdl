@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="userfollowService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/userfollowService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/userfollowService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/userfollowService/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IuserfollowService_followUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:followUser" />
+  </wsdl:message>
+  <wsdl:message name="IuserfollowService_followUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:followUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IuserfollowService_unfollowUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:unfollowUser" />
+  </wsdl:message>
+  <wsdl:message name="IuserfollowService_unfollowUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:unfollowUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IuserfollowService_getFollowerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFollowerList" />
+  </wsdl:message>
+  <wsdl:message name="IuserfollowService_getFollowerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFollowerListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IuserfollowService">
+    <wsdl:operation name="followUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IuserfollowService/followUser" message="tns:IuserfollowService_followUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IuserfollowService/followUserResponse" message="tns:IuserfollowService_followUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="unfollowUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IuserfollowService/unfollowUser" message="tns:IuserfollowService_unfollowUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IuserfollowService/unfollowUserResponse" message="tns:IuserfollowService_unfollowUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFollowerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IuserfollowService/getFollowerList" message="tns:IuserfollowService_getFollowerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IuserfollowService/getFollowerListResponse" message="tns:IuserfollowService_getFollowerList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IuserfollowService" type="tns:IuserfollowService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="followUser">
+      <soap:operation soapAction="http://tempuri.org/IuserfollowService/followUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unfollowUser">
+      <soap:operation soapAction="http://tempuri.org/IuserfollowService/unfollowUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFollowerList">
+      <soap:operation soapAction="http://tempuri.org/IuserfollowService/getFollowerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="userfollowService">
+    <wsdl:port name="BasicHttpBinding_IuserfollowService" binding="tns:BasicHttpBinding_IuserfollowService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/InstagramReplicaService/userfollowService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

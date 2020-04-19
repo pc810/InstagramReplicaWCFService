@@ -59,5 +59,23 @@ namespace InstagramReplicaService
             }
 
         }
+        public List<int> getFollowerList(int userId)
+        {
+            List<int> list = new List<int>();
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = con;
+                command.CommandText = "select * from [dbo].[userfollow] where userid1 = @userid1";
+                command.Parameters.Add(new SqlParameter("@userid1", userId));
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(Convert.ToInt32(reader["userid2"]));
+                }
+            }
+            return list;
+        }
     }
 }
